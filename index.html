@@ -122,9 +122,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
 .profile-actions-ig { display: flex; gap: 8px; margin-bottom: 15px; }
 .ig-btn { flex: 1; padding: 8px 0; background: #262626; border: 1px solid #c5a059; color: #fff; border-radius: 8px; font-size: 0.8rem; font-weight: bold; cursor: pointer; text-align: center; transition: all 0.2s; }
 .ig-btn.following { background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; border-color: #ffd700; }
-.ig-btn.logout { background: #d63031; border-color: #ff7675; }
 
-/* تبويبات الملف الشخصي */
 .profile-nav-tabs { display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #333; border-bottom: 1px solid #333; margin-bottom: 10px; }
 .profile-tab-btn { flex: 1; background: none; border: none; padding: 12px 0; color: #777; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; border-bottom: 2px solid transparent; }
 .profile-tab-btn svg { width: 22px; height: 22px; fill: currentColor; }
@@ -152,7 +150,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
 .accounts-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 .account-item { display: flex; align-items: center; gap: 12px; background: #151515; border: 1px solid #333; padding: 10px; border-radius: 10px; cursor: pointer; }
 .account-item:hover { border-color: #ffd700; }
-.account-item-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+.account-item-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; font-weight: bold; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.account-item-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .account-item-info { display: flex; flex-direction: column; }
 .account-item-name { font-size: 0.9rem; font-weight: bold; color: #fff; }
 .account-item-handle { font-size: 0.75rem; color: #aaa; }
@@ -170,12 +169,13 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
 .picker-type-select { background: #252525; border: 1px solid #444; color: #fff; padding: 8px; border-radius: 8px; font-size: 0.85rem; outline: none; }
 .picker-action-btn { background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.95rem; text-align: center; }
 
-/* واجهة المراسلة الخاصة */
+/* واجهة المراسلة */
 .dm-overlay { position: absolute; inset: 0; background: #0f0f0f; z-index: 1200; display: none; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease-in-out; }
 .dm-overlay.open { display: flex; transform: translateX(0); }
 .dm-header { height: 56px; background: #141414; border-bottom: 1px solid #c5a059; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; }
 .dm-user-info { display: flex; align-items: center; gap: 10px; flex: 1; margin: 0 8px; }
-.dm-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.dm-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; display: flex; align-items: center; justify-content: center; font-weight: bold; overflow: hidden; }
+.dm-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .dm-username { font-size: 0.9rem; font-weight: bold; color: #fff; }
 .dm-actions-top { display: flex; align-items: center; gap: 10px; }
 .dm-action-btn { background: none; border: none; color: #ffd700; cursor: pointer; display: flex; align-items: center; justify-content: center; }
@@ -188,7 +188,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
 .dm-bubble img { max-width: 100%; border-radius: 10px; margin-top: 5px; display: block; }
 .dm-bubble audio { max-width: 100%; margin-top: 5px; height: 36px; }
 
-/* شريط الإدخال في الشات */
+/* شريط الإدخال */
 .dm-input-area { height: 60px; padding: 8px 10px; background: #141414; border-top: 1px solid #333; display: flex; align-items: center; gap: 6px; }
 .chat-icon-btn { background: none; border: none; color: #ffd700; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 4px; border-radius: 50%; transition: background-color 0.2s; }
 .chat-icon-btn:active { background: rgba(255, 215, 0, 0.1); }
@@ -208,7 +208,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
 /* شاشة المكالمات */
 .call-overlay { position: absolute; inset: 0; background: #0a0a0a; z-index: 2000; display: none; flex-direction: column; align-items: center; justify-content: space-between; padding: 50px 20px; }
 .call-overlay.open { display: flex; }
-.call-user-avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; font-size: 3rem; font-weight: bold; display: flex; align-items: center; justify-content: center; border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3); }
+.call-user-avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #c5a059); color: #000; font-size: 3rem; font-weight: bold; display: flex; align-items: center; justify-content: center; border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3); overflow: hidden; }
+.call-user-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .call-status { color: #ffd700; font-size: 1.1rem; margin-top: 15px; font-weight: 500; }
 .call-controls { display: flex; gap: 20px; align-items: center; }
 .call-btn { width: 60px; height: 60px; border-radius: 50%; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.5rem; transition: transform 0.2s; }
@@ -224,7 +225,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
   <div class="login-card">
     <h2>أهلاً بك 👑</h2>
     <p>يرجى تسجيل الدخول بحساب قوقل للمتابعة واستخدام كامل مميزات التطبيق</p>
-    <button class="google-btn" onclick="handleGoogleLogin()">
+    <button class="google-btn" id="btnGoogleAuth">
       <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="22" height="22" alt="Google">
       التسجيل بواسطة قوقل
     </button>
@@ -280,7 +281,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
       <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
     </button>
     <button class="nav-item" id="navFriends" onclick="showTab('friends')">
-      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
       <span>الأصدقاء</span>
     </button>
     <button class="nav-item" id="navProfile" onclick="showProfile(true)">
@@ -337,15 +338,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
       <div class="currency-cards">
         <div class="currency-card">
           <div class="currency-name">دولار (USD)</div>
-          <div class="currency-amount">$0.00</div>
+          <div class="currency-amount" id="valUSD">$0.00</div>
         </div>
         <div class="currency-card">
           <div class="currency-name">سعودي (SAR)</div>
-          <div class="currency-amount">0.00</div>
+          <div class="currency-amount" id="valSAR">0.00</div>
         </div>
         <div class="currency-card">
           <div class="currency-name">يمني (YER)</div>
-          <div class="currency-amount">0</div>
+          <div class="currency-amount" id="valYER">0</div>
         </div>
       </div>
       <div class="wallet-transfer-buttons">
@@ -438,14 +439,12 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
         <div id="profileBioDesc">أهلاً بكم في حسابي الرسمي ✨</div>
       </div>
       
-      <!-- الأزرار الديناميكية للحساب -->
       <div class="profile-actions-ig">
         <button class="ig-btn" id="followBtn" onclick="toggleFollow()">متابعة ➕</button>
         <button class="ig-btn" id="dmProfileBtn" onclick="openDirectMessage()" style="display: none;">مراسلة خاص 💬</button>
-        <button class="ig-btn logout" id="logoutBtn" onclick="handleLogout()" style="display: none;">تسجيل الخروج 🚪</button>
+        <button class="ig-btn" id="logoutBtn" onclick="handleLogout()">تسجيل الخروج 🚪</button>
       </div>
 
-      <!-- تبويبات الملف الشخصي -->
       <div class="profile-nav-tabs">
         <button class="profile-tab-btn active" id="pTabGrid" onclick="switchProfileTab('grid')">
           <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3zm0 10h8v8H3zm10-10h8v8h-8zm0 10h8v8h-8z"/></svg>
@@ -465,7 +464,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
     </div>
   </div>
 
-  <!-- واجهة المراسلة الخاصة -->
+  <!-- واجهة المراسلة الخاص -->
   <div class="dm-overlay" id="dmOverlay">
     <div class="dm-header">
       <button class="dm-action-btn" onclick="closeDirectMessage()">➔</button>
@@ -518,13 +517,29 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
 
 </div>
 
-<!-- ربط مكتبات Firebase مباشرة عبر CDN -->
+<!-- ==================== تكامل FIREBASE ==================== -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  import { 
+    getAuth, 
+    GoogleAuthProvider, 
+    signInWithPopup, 
+    onAuthStateChanged, 
+    signOut 
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  import { 
+    getFirestore, 
+    doc, 
+    setDoc, 
+    getDoc, 
+    collection, 
+    addDoc, 
+    onSnapshot, 
+    query, 
+    orderBy 
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-  // إعدادات مشروعك في Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyAgtJ4ZV8476tLxXoogzo3clMz_kH7jja4",
     authDomain: "king-yahya.firebaseapp.com",
@@ -535,90 +550,166 @@ html, body { width: 100%; height: 100%; overflow: hidden; background-color: #050
     measurementId: "G-MNKEWJ8VRX"
   };
 
-  // تهيئة Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
+  const db = getFirestore(app);
+  const googleProvider = new GoogleAuthProvider();
 
-  // متغير عالمي لحفظ بيانات المستخدم الحالي
-  window.currentUserData = null;
+  let currentUser = null;
 
-  // تسجيل الدخول بواسطة Google
-  window.handleGoogleLogin = function() {
-    signInWithPopup(auth, provider)
+  // ربط زر تسجيل الدخول
+  document.getElementById('btnGoogleAuth').addEventListener('click', () => {
+    signInWithPopup(auth, googleProvider)
       .then((result) => {
-        // تم الدخول بنجاح
+        const user = result.user;
+        syncUserDatabase(user);
       })
       .catch((error) => {
-        console.error("خطأ في تسجيل الدخول: ", error);
-        alert("تعذر تسجيل الدخول بواسطة Google، يرجى المحاولة لاحقاً.");
+        console.error("خطأ في تسجيل الدخول:", error);
+        alert("تعذر تسجيل الدخول بواسطة قوقل.");
       });
-  };
+  });
 
-  // تسجيل الخروج
-  window.handleLogout = function() {
-    signOut(auth).then(() => {
-      // تم الخروج
-    }).catch((error) => {
-      console.error("خطأ في تسجيل الخروج: ", error);
-    });
-  };
-
-  // الاستماع لحالة تسجيل الدخول (تسجيل تلقائي)
+  // متابعة حالة المصادقة تلقائياً
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      window.currentUserData = user;
-      updateUserProfileUI(user);
-      showMainApp();
+      currentUser = user;
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('mainApp').style.display = 'flex';
+      
+      syncUserDatabase(user);
+      loadUserWallet(user.uid);
+      listenToGlobalVideos();
     } else {
-      window.currentUserData = null;
+      currentUser = null;
       document.getElementById('loginScreen').style.display = 'flex';
       document.getElementById('mainApp').style.display = 'none';
     }
   });
 
-  // تحديث البروفايل ببيانات الحساب الحقيقي من Google
-  function updateUserProfileUI(user) {
-    const name = user.displayName || "مستخدم Google";
+  // مزامنة أصل بيانات المستخدم مع Firestore
+  async function syncUserDatabase(user) {
+    const userRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(userRef);
+
+    if (!docSnap.exists()) {
+      await setDoc(userRef, {
+        uid: user.uid,
+        name: user.displayName || "مستخدم جديد",
+        email: user.email,
+        photoURL: user.photoURL || "",
+        followers: 0,
+        following: 0,
+        posts: 0,
+        wallet: { usd: 0, sar: 0, yer: 0 }
+      });
+    }
+
+    // تحديث واجهة الملف الشخصي للبيانات الفعلية
+    updateProfileUI(user, docSnap.data());
+  }
+
+  function updateProfileUI(user, userData) {
+    const name = user.displayName || "حسابي الشخصي";
     const photo = user.photoURL;
 
     document.getElementById('profileBioName').innerText = name;
-    
-    // تحديث الصورة الشخصية في البروفايل
-    const avatarContainer = document.getElementById('profileAvatar');
     if (photo) {
-      avatarContainer.innerHTML = `<img src="${photo}" alt="${name}">`;
+      document.getElementById('profileAvatar').innerHTML = `<img src="${photo}" alt="Avatar">`;
     } else {
-      avatarContainer.innerText = name.charAt(0).toUpperCase();
+      document.getElementById('profileAvatar').innerText = "👑";
+    }
+
+    if (userData) {
+      document.getElementById('statPostsCount').innerText = userData.posts || 0;
+      document.getElementById('statFollowersCount').innerText = userData.followers || 0;
+      document.getElementById('statFollowingCount').innerText = userData.following || 0;
     }
   }
+
+  async function loadUserWallet(uid) {
+    const userRef = doc(db, "users", uid);
+    const docSnap = await getDoc(userRef);
+    if (docSnap.exists()) {
+      const w = docSnap.data().wallet || { usd: 0, sar: 0, yer: 0 };
+      document.getElementById('valUSD').innerText = `$${w.usd.toFixed(2)}`;
+      document.getElementById('valSAR').innerText = `${w.sar.toFixed(2)}`;
+      document.getElementById('valYER').innerText = `${w.yer}`;
+    }
+  }
+
+  // الاستماع المباشر للتحديثات وقراءة الفيديوهات العامة
+  function listenToGlobalVideos() {
+    const q = query(collection(db, "videos"), orderBy("createdAt", "desc"));
+    onSnapshot(q, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        if (change.type === "added") {
+          const videoData = change.doc.data();
+          if (videoData.type === 'short') {
+            window.shortsData.unshift({
+              id: change.doc.id,
+              title: videoData.title,
+              views: "1 مشاهدة",
+              likes: videoData.likes || 0,
+              comments: 0,
+              reposts: 0,
+              src: videoData.url
+            });
+            window.renderShorts();
+          } else {
+            window.longVideosData.unshift({
+              id: change.doc.id,
+              title: videoData.title,
+              channel: videoData.authorName || "قناة عامة",
+              meta: "الآن",
+              src: videoData.url
+            });
+            window.renderLongVideos();
+          }
+        }
+      });
+    });
+  }
+
+  // إتاحة وظيفة تسجيل الخروج عالمياً
+  window.handleLogout = function() {
+    signOut(auth).then(() => {
+      location.reload();
+    });
+  };
+
+  // رفع وحفظ بيانات الميديا إلى Firestore
+  window.saveVideoToFirestore = async function(title, type, srcUrl) {
+    if (!currentUser) return;
+    try {
+      await addDoc(collection(db, "videos"), {
+        title: title,
+        type: type,
+        url: srcUrl,
+        authorId: currentUser.uid,
+        authorName: currentUser.displayName || "مستخدم",
+        likes: 0,
+        createdAt: new Date()
+      });
+    } catch (e) {
+      console.error("خطأ أثناء حفظ بيانات الفيديو:", e);
+    }
+  };
 </script>
 
 <script>
-/* ==================== دالة إظهار التطبيق الرئيسي ==================== */
-function showMainApp() {
-  document.getElementById('loginScreen').style.display = 'none';
-  document.getElementById('mainApp').style.display = 'flex';
-}
-
-/* ==================== قاعدة بيانات الحسابات ==================== */
+/* ==================== المكونات الداخلية للتطبيق ==================== */
 const sampleAccounts = [
   { id: "1", name: "أحمد علي", handle: "@ahmed_ali", avatar: "A", followers: 120, following: 15, posts: 3, isFollowed: false },
   { id: "2", name: "محمد صلاح", handle: "@mo_salah", avatar: "M", followers: 450, following: 80, posts: 12, isFollowed: false },
   { id: "3", name: "سارة خالد", handle: "@sara_k", avatar: "S", followers: 89, following: 40, posts: 5, isFollowed: false }
 ];
 
-let myProfile = {
-  postsCount: 0,
-  followersCount: 0,
-  followingCount: 0
-};
-
+let myProfile = { postsCount: 0, followersCount: 0, followingCount: 0 };
 let currentProfileAccount = null; 
 let isMyAccount = true;
 
-/* ==================== تشغيل الفيديوهات ==================== */
 const videoSources = [
   "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
   "https://vjs.zencdn.net/v/oceans.mp4",
@@ -627,7 +718,7 @@ const videoSources = [
 
 let customUploadedSrc = null;
 
-let shortsData = Array.from({length: 3}, (_, i) => ({
+var shortsData = Array.from({length: 3}, (_, i) => ({
   id: i,
   title: `فيديو قصير #${i + 1}`,
   views: `1.2K مشاهدة`,
@@ -637,7 +728,7 @@ let shortsData = Array.from({length: 3}, (_, i) => ({
   src: videoSources[i % videoSources.length]
 }));
 
-let longVideosData = Array.from({length: 3}, (_, i) => ({
+var longVideosData = Array.from({length: 3}, (_, i) => ({
   id: i,
   title: `فيديو رئيسي #${i + 1}`,
   channel: `القناة الرسمية`,
@@ -647,6 +738,7 @@ let longVideosData = Array.from({length: 3}, (_, i) => ({
 
 function renderShorts() {
   const carousel = document.getElementById('shortsCarousel');
+  if(!carousel) return;
   carousel.innerHTML = shortsData.map((item, index) => `
     <div class="short-card" onclick="openShort(${index})">
       <video src="${item.src}" preload="metadata" muted></video>
@@ -660,6 +752,7 @@ function renderShorts() {
 
 function renderLongVideos() {
   const container = document.getElementById('longVideosContainer');
+  if(!container) return;
   container.innerHTML = longVideosData.map(item => `
     <div class="video-card">
       <video class="video-player" src="${item.src}" controls preload="metadata" onplay="stopOtherVideos(this)"></video>
@@ -709,42 +802,20 @@ function showTab(tab) {
   }
 }
 
-/* ==================== إعداد واجهة الحساب ==================== */
 function showProfile(isMyOwn = true, accData = null) {
   showTab('none');
   document.getElementById('navProfile').classList.add('active');
   document.getElementById('profilePage').classList.add('open');
 
   isMyAccount = isMyOwn;
-
   const followBtn = document.getElementById('followBtn');
   const dmBtn = document.getElementById('dmProfileBtn');
-  const logoutBtn = document.getElementById('logoutBtn');
 
   if (isMyOwn) {
     currentProfileAccount = null;
     document.getElementById('profilePageTitle').innerText = "الملف الشخصي";
-    
-    // استخدام بيانات المستخدم المسجل من Google إن وجدت
-    if (window.currentUserData) {
-      document.getElementById('profileBioName').innerText = window.currentUserData.displayName || "حسابي الشخصي";
-      const avatar = document.getElementById('profileAvatar');
-      if (window.currentUserData.photoURL) {
-        avatar.innerHTML = `<img src="${window.currentUserData.photoURL}">`;
-      }
-    } else {
-      document.getElementById('profileBioName').innerText = "حسابي الشخصي";
-      document.getElementById('profileAvatar').innerText = "👑";
-    }
-
-    document.getElementById('statPostsCount').innerText = myProfile.postsCount;
-    document.getElementById('statFollowersCount').innerText = myProfile.followersCount;
-    document.getElementById('statFollowingCount').innerText = myProfile.followingCount;
-    
     followBtn.style.display = 'none';
     dmBtn.style.display = 'none';
-    logoutBtn.style.display = 'block';
-
   } else {
     currentProfileAccount = accData;
     document.getElementById('profilePageTitle').innerText = accData.handle;
@@ -759,15 +830,11 @@ function showProfile(isMyOwn = true, accData = null) {
 
     followBtn.style.display = 'block';
     dmBtn.style.display = 'block';
-    logoutBtn.style.display = 'none';
-
     updateFollowButtonState();
   }
-  
   switchProfileTab('grid');
 }
 
-/* التنقل بين تبويبات البروفايل */
 function switchProfileTab(type) {
   document.querySelectorAll('.profile-tab-btn').forEach(btn => btn.classList.remove('active'));
   const container = document.getElementById('profileGridContainer');
@@ -787,7 +854,6 @@ function switchProfileTab(type) {
 function toggleFollow() {
   if (currentProfileAccount) {
     currentProfileAccount.isFollowed = !currentProfileAccount.isFollowed;
-    
     if (currentProfileAccount.isFollowed) {
       currentProfileAccount.followers += 1;
       myProfile.followingCount += 1;
@@ -795,7 +861,6 @@ function toggleFollow() {
       currentProfileAccount.followers = Math.max(0, currentProfileAccount.followers - 1);
       myProfile.followingCount = Math.max(0, myProfile.followingCount - 1);
     }
-    
     document.getElementById('statFollowersCount').innerText = currentProfileAccount.followers;
     updateFollowButtonState();
   }
@@ -818,7 +883,6 @@ function editProfile() {
   if (newName !== null && newName.trim() !== "") {
     document.getElementById('profileBioName').innerText = newName;
   }
-
   const newBio = prompt("تعديل السيرة الذاتية:", document.getElementById('profileBioDesc').innerText);
   if (newBio !== null && newBio.trim() !== "") {
     document.getElementById('profileBioDesc').innerText = newBio;
@@ -855,12 +919,11 @@ function selectAccount(id) {
   showProfile(false, acc);
 }
 
-/* ==================== الإشعارات ==================== */
 function openNotifications() {
   const modal = document.getElementById('notificationsModal');
   const list = document.getElementById('notificationsList');
 
-  let htmlContent = `
+  list.innerHTML = `
     <div class="notification-item">
       <div class="notification-avatar">M</div>
       <div class="notification-content">
@@ -868,16 +931,7 @@ function openNotifications() {
         <div class="notification-time">منذ 10 دقائق</div>
       </div>
     </div>
-    <div class="notification-item">
-      <div class="notification-avatar">S</div>
-      <div class="notification-content">
-        <div class="notification-text">أعجبت <b>سارة خالد</b> بفيديو Short الخاص بك.</div>
-        <div class="notification-time">منذ ساعة</div>
-      </div>
-    </div>
   `;
-
-  list.innerHTML = htmlContent;
   modal.classList.add('open');
 }
 
@@ -885,7 +939,6 @@ function closeNotifications() {
   document.getElementById('notificationsModal').classList.remove('open');
 }
 
-/* ==================== الشورتس والميديا ==================== */
 function openShort(index) {
   stopOtherVideos(null);
   document.getElementById('walletPage').classList.remove('open');
@@ -972,8 +1025,7 @@ function closeShort() {
 }
 
 function toggleSearchBar() {
-  const sb = document.getElementById('searchBar');
-  sb.classList.toggle('active');
+  document.getElementById('searchBar').classList.toggle('active');
 }
 
 function handleSearch() {
@@ -1013,26 +1065,8 @@ function confirmPublishFromGallery() {
   const type = document.getElementById('pickerVideoType').value;
   const src = customUploadedSrc || videoSources[0];
 
-  if (type === 'short') {
-    shortsData.unshift({
-      id: Date.now(),
-      title: title,
-      views: "1 مشاهدة",
-      likes: 0,
-      comments: 0,
-      reposts: 0,
-      src: src
-    });
-    renderShorts();
-  } else {
-    longVideosData.unshift({
-      id: Date.now(),
-      title: title,
-      channel: window.currentUserData ? window.currentUserData.displayName : "قناتي الرسمية",
-      meta: "الآن",
-      src: src
-    });
-    renderLongVideos();
+  if (window.saveVideoToFirestore) {
+    window.saveVideoToFirestore(title, type, src);
   }
 
   const gridContainer = document.getElementById('profileGridContainer');
@@ -1049,7 +1083,6 @@ function confirmPublishFromGallery() {
   alert("تم نشر الفيديو بنجاح! 🚀");
 }
 
-/* ==================== المراسلة الخاصة والبصمة الصوتية والمكالمات ==================== */
 function openDirectMessage() {
   document.getElementById('dmOverlay').classList.add('open');
 }
@@ -1064,7 +1097,6 @@ function sendDirectMessage() {
   if (!text) return;
 
   const container = document.getElementById('dmContainer');
-
   const sentBubble = document.createElement('div');
   sentBubble.className = 'dm-bubble sent';
   sentBubble.innerText = text;
@@ -1085,12 +1117,10 @@ function handleChatImageUpload(event) {
   if (file) {
     const imageUrl = URL.createObjectURL(file);
     const container = document.getElementById('dmContainer');
-
     const sentBubble = document.createElement('div');
     sentBubble.className = 'dm-bubble sent';
     sentBubble.innerHTML = `<div>صورة 🖼️</div><img src="${imageUrl}" alt="صورة">`;
     container.appendChild(sentBubble);
-
     container.scrollTop = container.scrollHeight;
   }
 }
@@ -1116,7 +1146,6 @@ async function startVoiceRecord() {
     mediaRecorder.onstop = () => {
       const audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
       const audioUrl = URL.createObjectURL(audioBlob);
-      
       const container = document.getElementById('dmContainer');
       const sentBubble = document.createElement('div');
       sentBubble.className = 'dm-bubble sent';
@@ -1127,7 +1156,7 @@ async function startVoiceRecord() {
 
     mediaRecorder.start();
   } catch (err) {
-    console.log("تعذر الوصول للميكروفون أو جهاز محاكاة:", err);
+    console.log("تعذر الوصول للميكروفون:", err);
   }
 }
 
